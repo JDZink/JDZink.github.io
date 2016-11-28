@@ -32,19 +32,29 @@
 					x=q;<br>
 					else 
 					x=z;<p>
-					This is some basic stuff, but its a bit funky anyway. lets start with the easy one. <br> ’=‘ assigns a variable. What does that mean? It actually DOES something. A variable is assigned a value.<br>x=1;<br>
+					</p>		    
+
+	        </div>
+	        <div class="blogpost">
+			    <h3>Not all = are == .equals()</h3>
+			    <p id="date"> (27NOV2016)  </p> 
+			    <p>	
+			    	This is some basic stuff, but its a bit funky anyway. lets start with the easy one. <br> ’=‘ assigns a variable. What does that mean? It actually DOES something. A variable is assigned a value.<br>x=1;<br>
 					y=x; <br>
 					str=“I like to golf”;<br>
+					So if ‘=‘ does work ‘== does twice as much work right?  No. All this does is look at both sides of the Comparator (‘==‘) and decide if they are the same value OR reference the same object.<br>in layman terms if it is a  “primitive” or in other words has a set value, such as a character(char), a number(int, double, long, short, float), or a true/false(boolean) it checks if they match. If ihere is a match then the comparison results in True. <br><br>
 					5 == 6 result is False…they are not equal<br>
 					True ==True result is True… they are both equivalent Boolean Values<br>
+					Int x = 136848; <—sets the value of x<be>
 					x == 136848 result is true because both sides of comparator are the same. <br>
-					Strin	g z = “golfing”;<br>
+					So why does this:<br>
+					String z = “golfing”;<br>
 					z == “golfing” result is False <br>
 					Happen?<br><br>
 					Lets talk about the ‘ String z = “golfing”; ‘ bit. A String is not a “native” variable. It is actually a reference to an instance of a String object. This is where our comparison breaks, because it is trying to ask if  “golfing” is == to the reference to the String object that is labeled z. It does not know the value contained in z, its just trying to find out if they are the same object. they are not. This would be like comparing an actual Dennys to the address of Dennys. One can give you pancakes, the other just tells you where there should be pancakes. One is a String object reference named z, and one is the literal string ”golfing”. So how then would one compare a String to another String object and decide if they are the same value?<br><br>
-					
+
 					Enter the .equals() Method. If you aren’t there yet methods are instructions that objects can execute to get things done. In our case the .equals() method is going to break down our comparison string(“golfing”) and compare each character to each character in the variable we supply.<br> <br>
-					
+
 					Lets try again<br>
 					String z = “golfing”;<br>
 					z.equals( “golfing”) results in True<br>
@@ -52,12 +62,6 @@
 					What this is is doing is essentially grabbing the first Character from the string object z references and comparing it to the first Char of our test phrase and if after comparing all of the characters one by one the value is in fact still true then the result is true. As soon as it hits a comparison that is not true the result becomes false. <br>
 					<br>
 					Now, all of that being said sometimes comparing two strings with == will result in true. I suggest you Read into how java handles memory references to find out why, but the safest most error free method of comparing strings is the .equals() method. I am a fan of things that work all of the time and not just some of the time.
-				</p>		    
-	        </div>
-	        <div class="blogpost">
-			    <h3>Not all = are == .equals()</h3>
-			    <p id="date"> (27NOV2016)  </p> 
-			    <p>
 			    </p>
 	        </div>
 		<div id="footer">
