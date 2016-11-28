@@ -26,6 +26,7 @@ div {
 	float: left;
 	margin-top: 65px;
 	width: 10%;
+	height: 75%;
 	background-color: #B9D7D9;
 	margin-bottom: 10px;
 }
@@ -35,7 +36,6 @@ div {
 	float: right;
 	margin-top: 65px;
 	width: 88%;
-	height: 400px;
 	background-color: #F4EBC3;
 	margin-bottom: 10px;
 }
