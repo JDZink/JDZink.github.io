@@ -26,16 +26,36 @@
 			    <h3>To 'switch' or not to 'switch'?</h3>
 			    <p id="date"> (27NOV2016)  </p> 
 			    <p>Like many of you (maybe) learning java, I found 'if', 'if else', and 'else' statements tedious when dealing with several possible decisions in my code.  It is fairly simple, sure: “if(true statement) { do stuff} else if (true statement) {do other stuff}, but it can be very tedious when you simply need to check one variable, like a user input and change one variable. all of that comparing statements over and over can get quite time consuming and cluttered to type. Then I finally discovered the switch statement, yes the syntax is a bit odd, but it was fantastic. At first. Then I ran some code to name some months and accidentally listed 3 at once instead of just the one desired. This lead me to do some more learning on how this switch statement works</p>
-				<p> The ‘switch’ Statement is a rapid way to check a single value for many possible options. It does this quite well, but it has its limits. Namely, you cannot create instance variables from within the switch statement. This can be very cumbersome when you need to manipulate data based on the result of the comparison. You cannot for example use a switch statement to create a new Array of values based on the math being performed. You can of course instantiate pre existing variables, and then modify those variables, but they are global to the parent object/method that started the switch, which can get cluttered if you aren’t careful. The second biggest thing is that the switch statement can essentially only perform an == comparison.  You cannot use a range. For example if you need to know if a month falls in the first or last half of the year, you would have to do a separate case comparison for each possibility  i.e.  <br>switch(x) {<br>case 1: <br>case 2: <br>case 3: <br>case 4: <br>case 5: <br>case 6: monthHalf=“first”;<br>break; <br>case 7:<br> case 8:....and so on<br>’ VS ‘ <br>if(x>=6) monthHalf=“first”; else monthHalf=last‘ </p><p>The final important note for the beginner is that switch will begin its code at the point that the test value becomes true and will run ALL the remaining code until it hits a break statement or the end of the switch statement. This means that you must use “case x: ….code…; break;”  format for each tested item.   If you do not, the code will continue executing.  But it is not all bad. The format is still much clearer and easier to modify than Several if/else Statements.<br><br></p><p> Bottom line? Use a switch to test a string, int, byte, short, or char to a series of exact matches to launch further code. The beginning of a troubleshooting flowchart would be a great example of when a switch statement would be fantastic. There could be 25 different entrance points, they will likely lead to only a few actual fixes, but the nest of if/else statements to do such a task would become unbearable to wade through.<br>Pro Tip: If you were unaware, you can format an ‘if’ ‘else if’ and ‘else’ statement without curly brackets if you are only executing one statement. It looks something like this</p>
+				<p> The ‘switch’ Statement is a rapid way to check a single value for many possible options. It does this quite well, but it has its limits. Namely, you cannot create instance variables from within the switch statement. This can be very cumbersome when you need to manipulate data based on the result of the comparison. You cannot for example use a switch statement to create a new Array of values based on the math being performed. You can of course instantiate pre existing variables, and then modify those variables, but they are global to the parent object/method that started the switch, which can get cluttered if you aren’t careful. The second biggest thing is that the switch statement can essentially only perform an == comparison.  You cannot use a range. For example if you need to know if a month falls in the first or last half of the year, you would have to do a separate case comparison for each possibility  i.e.  <br>switch(x) {<br>case 1: <br>case 2: <br>case 3: <br>case 4: <br>case 5: <br>case 6: monthHalf=“first”;<br>break; <br>case 7:<br> case 8:....and so on<br>’ VS ‘ <br>if(x>=6) monthHalf=“first”; else monthHalf=last;‘ </p><p>The final important note for the beginner is that switch will begin its code at the point that the test value becomes true and will run ALL the remaining code until it hits a break statement or the end of the switch statement. This means that you must use “case x: ….code…; break;”  format for each tested item.   If you do not, the code will continue executing.  But it is not all bad. The format is still much clearer and easier to modify than Several if/else Statements.<br><br></p><p> Bottom line? Use a switch to test a string, int, byte, short, or char to a series of exact matches to launch further code. The beginning of a troubleshooting flowchart would be a great example of when a switch statement would be fantastic. There could be 25 different entrance points, they will likely lead to only a few actual fixes, but the nest of if/else statements to do such a task would become unbearable to wade through.<br><br>Pro Tip: If you were unaware, you can format an ‘if’ ‘else if’ and ‘else’ statement without curly brackets if you are only executing one statement. It looks something like this:</p>
 				<p><br>if(x==1)<br>x=y;<br>
 					else if(x==2)<br>
 					x=q;<br>
 					else 
-					x=z;</p>		    
-
+					x=z;<p>
+					This is some basic stuff, but its a bit funky anyway. lets start with the easy one. <br> ’=‘ assigns a variable. What does that mean? It actually DOES something. A variable is assigned a value.<br>x=1;<br>
+					y=x; <br>
+					str=“I like to golf”;<br>
+					5 == 6 result is False…they are not equal<br>
+					True ==True result is True… they are both equivalent Boolean Values<br>
+					x == 136848 result is true because both sides of comparator are the same. <br>
+					Strin	g z = “golfing”;<br>
+					z == “golfing” result is False <br>
+					Happen?<br><br>
+					Lets talk about the ‘ String z = “golfing”; ‘ bit. A String is not a “native” variable. It is actually a reference to an instance of a String object. This is where our comparison breaks, because it is trying to ask if  “golfing” is == to the reference to the String object that is labeled z. It does not know the value contained in z, its just trying to find out if they are the same object. they are not. This would be like comparing an actual Dennys to the address of Dennys. One can give you pancakes, the other just tells you where there should be pancakes. One is a String object reference named z, and one is the literal string ”golfing”. So how then would one compare a String to another String object and decide if they are the same value?<br><br>
+					
+					Enter the .equals() Method. If you aren’t there yet methods are instructions that objects can execute to get things done. In our case the .equals() method is going to break down our comparison string(“golfing”) and compare each character to each character in the variable we supply.<br> <br>
+					
+					Lets try again<br>
+					String z = “golfing”;<br>
+					z.equals( “golfing”) results in True<br>
+					<br>
+					What this is is doing is essentially grabbing the first Character from the string object z references and comparing it to the first Char of our test phrase and if after comparing all of the characters one by one the value is in fact still true then the result is true. As soon as it hits a comparison that is not true the result becomes false. <br>
+					<br>
+					Now, all of that being said sometimes comparing two strings with == will result in true. I suggest you Read into how java handles memory references to find out why, but the safest most error free method of comparing strings is the .equals() method. I am a fan of things that work all of the time and not just some of the time.
+				</p>		    
 	        </div>
 	        <div class="blogpost">
-			    <h3>First Blog Post</h3>
+			    <h3>Not all = are == .equals()</h3>
 			    <p id="date"> (27NOV2016)  </p> 
 			    <p>
 			    </p>
