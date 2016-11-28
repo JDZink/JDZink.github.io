@@ -62,6 +62,7 @@ div {
 }
 .blogpost {
     background-color: pink;
+    margin: 10px;
 }
 .blogpost p {
     margin: 10px;
