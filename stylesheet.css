@@ -22,11 +22,11 @@ div {
 	text-align: center;
 }
 .left {
-	position: relative;
+	position: fixed;
 	float: left;
 	margin-top: 65px;
 	width: 10%;
-	height: 75%;
+	height: 50%;
 	background-color: #B9D7D9;
 	margin-bottom: 10px;
 }
